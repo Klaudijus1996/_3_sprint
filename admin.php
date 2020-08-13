@@ -1,25 +1,40 @@
-<?php
-    declare(strict_types=1);
-    $request = $_SERVER['REQUEST_URI'];
-    $root = '/_3_sprint';
-?>
+
 <!DOCTYPE html>
+<?php include('script/data.php') ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css">
     <title>Document</title>
 </head>
 <body>
+<main>
+    <div class='container'>
+    <?php 
+        if (isset($_POST['login']) && !empty($_POST['username']) 
+        && !empty($_POST['password'])) {
+    if ($_POST['username'] == 'name' && 
+    $_POST['password'] == 'password') {
+        session_start();
+        $_SESSION['valid'] = true;
+        $_SESSION['timeout'] = time();
+        $_SESSION['username'] = 'name';
+        ob_get_clean();
+    } else {
+        echo $login_warning;
+    }
+        } else {
+    echo $login_form;
+    }
+    ?>
+    </div>
     <div class="main">
     <header>
         <?echo "
             <nav>
-                <a href='$root/home'>Home</a>
-                <a href='$root/about'>About Us</a>
-                <a href='$root/contact'>Contact Us</a>
-                <a href='$root/services'>Services</a>
+                <a href='$root/home'>Admin</a>
+                <a href='$root/index.php'>View Website</a>
+                <a href='$root/script/logout.php'>Logout</a>
             </nav>";?>
     </header>
     <main>
@@ -47,5 +62,6 @@
         <h5><?echo "&#169;  ".date("h:i:sa").'<br>'.date("Y-m-d"); ?></h5>
     </footer>
     </div>
+    </main>
 </body>
 </html>
