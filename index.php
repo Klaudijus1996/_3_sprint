@@ -1,7 +1,7 @@
 <?php
-    declare(strict_types=1);
-    $request = $_SERVER['REQUEST_URI'];
-    $root = '/_3_sprint';
+require_once "bootstrap.php";
+// require_once "page.php";
+$pages = $entityManager->getRepository('Pages')->findAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,40 +12,21 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="main">
     <header>
-        <?echo "
-            <nav>
-                <a href='$root/home'>Home</a>
-                <a href='$root/about'>About Us</a>
-                <a href='$root/contact'>Contact Us</a>
-                <a href='$root/services'>Services</a>
-            </nav>";?>
+        <nav>
+            <?php foreach($pages as $page) {?>
+            <a href="index.php?id=<?php echo $page->getID(); ?>">
+                <?php echo $page->getTitle(); ?>
+            </a>
+            <?php } ?>
+        </nav>
     </header>
     <main>
-        <?php
-        switch ($request) {
-            case $root.'/' :
-                require __DIR__ . '/src/views/home.php';
-                break;
-            case $root.'/about' :
-                require __DIR__ . '/src/views/about.php';
-                break;
-            case $root.'/contact' :
-                require __DIR__ . '/src/views/contact.php';
-                break;
-            case $root.'/services' :
-                require __DIR__ . '/src/views/services.php';
-                break;
-            case $root.'/home' :
-                require __DIR__ . '/src/views/home.php';
-                break;
-        }
-        ?>
+        <?php include_once('script/page.php') ?>
+        <a href="admin/index.php">Admin</a>
     </main>
     <footer>
-        <h5><?echo "&#169;  ".date("h:i:sa").'<br>'.date("Y-m-d"); ?></h5>
+            <h5><?echo "&#169;  ".date("h:i:sa").'<br>'.date("Y-m-d"); ?></h5>
     </footer>
-    </div>
 </body>
 </html>
