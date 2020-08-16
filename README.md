@@ -7,7 +7,7 @@ password: mysql
 username: admin
 password: password
 Create a new database called cms and add some data:
-CREATE DATABASE cms;
+```CREATE DATABASE cms;
 	CREATE TABLE cms.pages (
         page_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
         page_title varchar(255),
@@ -23,6 +23,6 @@ CREATE DATABASE cms;
 			(3,'Contact Us','This is Contact Us page!'),
 			(4,'About Us','This is About Us page!'),
 			(5,'Services','This is Services page!');
-		INSERT INTO cms.users VALUES (1,'admin','password');
+		INSERT INTO cms.users VALUES (1,'admin','password');```
 
 
