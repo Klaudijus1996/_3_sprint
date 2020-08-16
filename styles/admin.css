@@ -1,3 +1,65 @@
-td {
+.login {
+    padding: 30px 0;
+    width: fit-content;
+}
+.login > input {
+    display: block;
+    padding: 4px 8px;
+    margin: 5px 0 15px 0;
+}
+.login > input:focus {
+    outline: none;
+}
+/* td {
     display: block;
 }
+th {
+    display: block;
+} */
+.sub {
+    float: right;
+}
+main {
+    text-align: center;
+}
+table {
+    font-family: arial, sans-serif;
+    /* border-collapse: collapse; */
+    width: 100%;
+    /* display: table; */
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-size: 18px;
+  }
+  td > a {
+      text-decoration: none;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #6D7F7F;
+    color: #dddddd;
+  }
+  tr:nth-child(odd) {
+    background-color: #dddddd;
+    color: #6D7F7F;
+  }
+  main > form {
+      padding: 30px 0;
+      text-align: left;
+      width: fit-content;
+      /* display: block; */
+  }
+  main > form > input,textarea {
+      display: block;
+      margin: 5px 0;
+      padding: 4px 8px;
+      resize: none;
+      /* float: left; */
+  }
+  main > form > input,textarea:focus {
+      outline: none;
+  }

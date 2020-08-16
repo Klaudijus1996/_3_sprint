@@ -25,21 +25,21 @@
             </header>
             <main>
                 <table>
-                <tr>
+                    <tr>
+                        <th>Page Title</th>
+                        <th>Actions</th>
+                    </tr>
                     <?php foreach($pages as $page) { ?>
-                    <td><?php echo $page->getTitle(); ?></td>
+                    <tr>
+                        <td><?echo $page->getTitle()?></td>
+                        <td><?php if ($page->getTitle() == 'Home') { 
+                            echo "<a hre='#'></a>";
+                            } else { ?> 
+                            <a style="color: #aa0000;" href="index.php?del=<?php echo $page->getID(); ?>">Del</a> <?php 
+                            } ?> 
+                            <a style="color: cornflowerblue" href="index.php?edit=<?php echo $page->getID(); ?>">Edit</a></td>
+                    </tr>
                     <?php } ?>
-                </tr>
-                <tr>
-                    <?php foreach($pages as $page) { if ($page->getTitle() == 'Home') { ?> <td><a href="#"></a></td> <?php } else {?>
-                    <td><a href="index.php?del=<?php echo $page->getID(); ?>">Del</a></td>
-                    <?php }} ?> 
-                </tr>
-                <tr>
-                    <?php foreach($pages as $page) { ?>
-                    <td><a href="index.php?edit=<?php echo $page->getID(); ?>">Edit</a></td>
-                    <?php } ?>
-                </tr>
                 </table>
                 <?php include_once('../script/add.php'); include_once('../script/edit.php') ?>
                 <a href="index.php?add=addnew">Add</a>
@@ -76,15 +76,31 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <link rel="stylesheet" href="../styles/main.css">
+        <link rel="stylesheet" href="../styles/admin.css">
+        <title>Login</title>
     </head>
     <body>
-    <?php if(isset($error)) { ?> <p style="color: #aa0000;"><?echo $error?></p> <?php } ?>
-        <form action="" method="post">
-            <input type="text" name="username" placeholder="Username">
-            <input type="password" name="userpassword" placeholder="Password">
-            <input type="submit" value="Login">
-        </form>
+        <header>
+            <nav>
+                <?php foreach($pages as $page) {?>
+                <a href="../index.php?id=<?php echo $page->getID(); ?>">
+                    <?php echo $page->getTitle(); ?>
+                </a>
+                <?php } ?>
+            </nav>
+        </header>
+        <main>
+            <?php if(isset($error)) { ?> <p style="display: block; color: #aa0000; font-family: italic; font-size: 13px; font-weight: 700"><?echo $error?></p> <?php } ?>
+            <form class="login" action="" method="post" autocomplete="off">
+            *Enter Username<input type="text" name="username" placeholder="Username">
+            *Enter Password<input type="password" name="userpassword" placeholder="Password">
+                <input class="sub" type="submit" value="Login">
+            </form>
+        </main>
+        <footer>
+            <h5><?echo "&#169;  ".date("h:i:sa").'<br>'.date("Y-m-d"); ?></h5>
+        </footer>
     </body>
     </html>
     

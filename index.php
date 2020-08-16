@@ -19,11 +19,11 @@ $pages = $entityManager->getRepository('Pages')->findAll();
                 <?php echo $page->getTitle(); ?>
             </a>
             <?php } ?>
+            <a href="admin/index.php">Admin</a>
         </nav>
     </header>
     <main>
         <?php include_once('script/page.php') ?>
-        <a href="admin/index.php">Admin</a>
     </main>
     <footer>
             <h5><?echo "&#169;  ".date("h:i:sa").'<br>'.date("Y-m-d"); ?></h5>
