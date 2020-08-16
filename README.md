@@ -2,7 +2,7 @@
 #### CMS
 To test mini CMS please open your MySQL workbench, make a connection for:
 username: root
-password: mysql
+password: mysqlsd
 ### Admin login: 
 username: admin
 password: password
