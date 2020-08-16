@@ -15,7 +15,7 @@
             $title = $_POST['update-title'];
             $content = $_POST['update-content'];
             $page->setTitle($title);
-            $page->setContent($content);
+            $page->setContent(nl2br($content));
             $entityManager->flush();
             header('Location: ../admin/index.php');
         }

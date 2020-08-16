@@ -12,7 +12,7 @@ if (isset($_GET['add'])) { ?>
         $newPageContent = $_POST['page-content'];
         $page = new Pages();
         $page->setTitle($newPageTitle);
-        $page->setContent($newPageContent);
+        $page->setContent(nl2br($newPageContent));
         $entityManager->persist($page);
         $entityManager->flush();
         header('Location: ../admin/index.php');
