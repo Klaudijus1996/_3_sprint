@@ -1,10 +1,9 @@
 <?php 
-
+if (isset($_GET['logout'])) {
         session_start();
-        unset($_SESSION["username"]);
-        unset($_SESSION["password"]);
-   
-        echo 'You have cleaned session';
+        unset($_POST['username']);
+        unset($_POST['userpassword']);
+        unset($_SESSION['logged_in']);
         header('Location: ../index.php');
-    
+}   
 ?>

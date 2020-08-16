@@ -1,6 +1,9 @@
 <?php 
     session_start();
     include_once('../bootstrap.php');
+    include_once('../script/del.php');
+    include_once('../script/logout.php');
+    $pages = $entityManager->getRepository('Pages')->findAll();
     if (isset($_SESSION['logged_in'])) {
         // display admin content ?>
         <!DOCTYPE html>
@@ -8,22 +11,38 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="styles/main.css">
+            <link rel="stylesheet" href="../styles/main.css">
+            <link rel="stylesheet" href="../styles/admin.css">
             <title>Admin</title>
         </head>
         <body>
             <header>
                 <nav>
-                    <?php foreach($pages as $page) {?>
-                    <a href="index.php?id=<?php echo $page->getID(); ?>">
-                        <?php echo $page->getTitle(); ?>
-                    </a>
-                    <?php } ?>
+                    <a href="index.php">Admin</a>
+                    <a href="../index.php">View Page</a>
+                    <a href="index.php?logout=out">Logout</a>
                 </nav>
             </header>
             <main>
-                <?php include_once('script/page.php') ?>
-                <a href="admin/index.php">Admin</a>
+                <table>
+                <tr>
+                    <?php foreach($pages as $page) { ?>
+                    <td><?php echo $page->getTitle(); ?></td>
+                    <?php } ?>
+                </tr>
+                <tr>
+                    <?php foreach($pages as $page) { if ($page->getTitle() == 'Home') { ?> <td><a href="#"></a></td> <?php } else {?>
+                    <td><a href="index.php?del=<?php echo $page->getID(); ?>">Del</a></td>
+                    <?php }} ?> 
+                </tr>
+                <tr>
+                    <?php foreach($pages as $page) { ?>
+                    <td><a href="index.php?edit=<?php echo $page->getID(); ?>">Edit</a></td>
+                    <?php } ?>
+                </tr>
+                </table>
+                <?php include_once('../script/add.php'); include_once('../script/edit.php') ?>
+                <a href="index.php?add=addnew">Add</a>
             </main>
             <footer>
                     <h5><?echo "&#169;  ".date("h:i:sa").'<br>'.date("Y-m-d"); ?></h5>
