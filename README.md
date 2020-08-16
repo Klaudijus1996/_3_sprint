@@ -20,10 +20,10 @@ CREATE DATABASE cms;
         userpassword varchar(255)
         );
 		INSERT INTO cms.pages VALUES (1,'Home','This is Home page!'),
-			(2,'News','This is News page!'),
-			(3,'Contact Us','This is Contact Us page!'),
-			(4,'About Us','This is About Us page!'),
-			(5,'Services','This is Services page!');
+		(2,'News','This is News page!'),
+		(3,'Contact Us','This is Contact Us page!'),
+		(4,'About Us','This is About Us page!'),
+		(5,'Services','This is Services page!');
 		INSERT INTO cms.users VALUES (1,'admin','password');
 
 
