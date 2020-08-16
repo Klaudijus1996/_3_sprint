@@ -1,6 +1,5 @@
 <?php
 require_once "bootstrap.php";
-// require_once "page.php";
 $pages = $entityManager->getRepository('Pages')->findAll();
 ?>
 <!DOCTYPE html>
