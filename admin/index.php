@@ -92,12 +92,12 @@
             </nav>
         </header>
         <main>
-            <?php if(isset($error)) { ?> <p style="display: block; color: #aa0000; font-family: italic; font-size: 13px; font-weight: 700"><?echo $error?></p> <?php } ?>
             <form class="login" action="" method="post" autocomplete="off">
-            *Enter Username<input type="text" name="username" placeholder="Username">
-            *Enter Password<input type="password" name="userpassword" placeholder="Password">
+                *Enter Username<input type="text" name="username" placeholder="Username">
+                *Enter Password<input type="password" name="userpassword" placeholder="Password">
                 <input class="sub" type="submit" value="Login">
             </form>
+            <?php if(isset($error)) { ?> <p style="float: left; width: fit-content; display: inline-block; color: #aa0000; font-family: arial; font-size: 13px; font-weight: 700"><?echo $error?></p> <?php } ?>
         </main>
         <footer>
             <h5><?echo "&#169;  ".date("\n l jS F Y"); ?></h5>
