@@ -3,7 +3,8 @@ if (isset($_GET['add'])) { ?>
     <form action="" method="post" autocomplete="off">
         *Enter page title<input type="text" name="page-title">
         *Enter content<textarea name="page-content" cols="90" rows="20"></textarea>
-        <input class="sub" type="submit" value="Create">
+        <input style="cursor: pointer" class="sub" type="submit" value="Create">
+        <div><a href="index.php">Cancel</a></div>
     </form>
 <?php 
     if (isset($_POST['page-title']) && isset($_POST['page-content'])) {

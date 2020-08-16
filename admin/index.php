@@ -35,14 +35,14 @@
                         <td><?php if ($page->getTitle() == 'Home') { 
                             echo "<a hre='#'></a>";
                             } else { ?> 
-                            <a style="color: #aa0000;" href="index.php?del=<?php echo $page->getID(); ?>">Del</a> <?php 
+                            <a class="del" href="index.php?del=<?php echo $page->getID(); ?>">Del</a> <?php 
                             } ?> 
-                            <a style="color: cornflowerblue" href="index.php?edit=<?php echo $page->getID(); ?>">Edit</a></td>
+                            <a class="edit" href="index.php?edit=<?php echo $page->getID(); ?>">Edit</a></td>
                     </tr>
                     <?php } ?>
                 </table>
+                <div class='links'><a href="index.php?add=addnew">Add</a></div>
                 <?php include_once('../script/add.php'); include_once('../script/edit.php') ?>
-                <a href="index.php?add=addnew">Add</a>
             </main>
             <footer>
                     <h5><?echo "&#169;  ".date("h:i:sa").'<br>'.date("Y-m-d"); ?></h5>
@@ -88,6 +88,7 @@
                     <?php echo $page->getTitle(); ?>
                 </a>
                 <?php } ?>
+                <a href="index.php">Admin</a>
             </nav>
         </header>
         <main>
@@ -99,7 +100,7 @@
             </form>
         </main>
         <footer>
-            <h5><?echo "&#169;  ".date("h:i:sa").'<br>'.date("Y-m-d"); ?></h5>
+            <h5><?echo "&#169;  ".date("\n l jS F Y"); ?></h5>
         </footer>
     </body>
     </html>

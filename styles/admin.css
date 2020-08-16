@@ -2,33 +2,60 @@
     padding: 30px 0;
     width: fit-content;
 }
-.login > input {
-    display: block;
+    .login > input {
+        display: block;
+        padding: 4px 8px;
+        margin: 5px 0 15px 0;
+    }
+        .login > input:focus {
+            outline: none;
+        }
+.links {
+    background-color: rgb(239, 239, 239);
+    border: 1px solid rgb(118, 118, 118);
+    border-radius: 2px;
+    color: black;
     padding: 4px 8px;
-    margin: 5px 0 15px 0;
+    width: fit-content;
+    margin: 5px 3px 0 0;
+    display: inline-block;
+    float: right;
 }
-.login > input:focus {
-    outline: none;
-}
-/* td {
-    display: block;
-}
-th {
-    display: block;
-} */
+        .links:hover {
+            background-color: rgb(225, 225, 225);
+        }
+    .links > a {
+        color: black;
+        text-decoration: none;
+    }
 .sub {
     float: right;
 }
+form > div {
+    background-color: rgb(239, 239, 239);
+    border: 1px solid rgb(118, 118, 118);
+    border-radius: 2px;
+    color: black;
+    padding: 4px 8px;
+    width: fit-content;
+    margin-top: 5px;
+    display: inline-block;
+}
+    form > div > a {
+        color: black;
+        text-decoration: none;
+    }
+        form > div:hover {
+            background-color: rgb(225, 225, 225);
+        }
 main {
     text-align: center;
 }
 table {
     font-family: arial, sans-serif;
-    /* border-collapse: collapse; */
     width: 100%;
-    /* display: table; */
+    cursor: default;
   }
-  
   td, th {
     border: 1px solid #dddddd;
     text-align: left;
@@ -51,15 +78,36 @@ table {
       padding: 30px 0;
       text-align: left;
       width: fit-content;
-      /* display: block; */
   }
   main > form > input,textarea {
       display: block;
       margin: 5px 0;
       padding: 4px 8px;
       resize: none;
-      /* float: left; */
   }
   main > form > input,textarea:focus {
       outline: none;
   }
+.del {
+    color: #aa0000;
+    padding: 3px 3px;
+    transition: ease-out 0.5s;
+}
+.del:hover {
+    /* border: 1px solid #aa0000; */
+    border-radius: 5px;
+    background-color: #aa000057;
+    transition: ease-in 0.5s;
+}
+.edit {
+    color: cornflowerblue;
+    padding: 3px 3px;
+    transition: ease-out 0.5s;
+}
+.edit:hover {
+    /* border: 1px solid #aa0000; */
+    border-radius: 5px;
+    background-color: rgba(100, 148, 237, 0.521);
+    transition: ease-in 0.5s;
+}
+

@@ -5,9 +5,10 @@
         $page = $entityManager->find('Pages', $edit);
         ?>
         <form action="" method="post" autocomplete="off">
-            <input type="text" name="update-title" value="<?echo $page->getTitle();?>">
-            <textarea name="update-content" cols="30" rows="10"><?echo $page->getContent();?></textarea>
-            <input type="submit" value="Done">
+            Page Title<input type="text" name="update-title" value="<?echo $page->getTitle();?>">
+            Content<textarea name="update-content" cols="90" rows="20"><?echo $page->getContent();?></textarea>
+            <input class="sub" type="submit" value="Update">
+            <div><a href="index.php">Cancel</a></div>
         </form>
 <?php 
         if (isset($_POST['update-title']) || isset($_POST['update-content'])) {

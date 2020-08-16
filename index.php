@@ -26,7 +26,7 @@ $pages = $entityManager->getRepository('Pages')->findAll();
         <?php include_once('script/page.php') ?>
     </main>
     <footer>
-            <h5><?echo "&#169;  ".date("h:i:sa").'<br>'.date("Y-m-d"); ?></h5>
+            <h5><?echo "&#169;  ".date("\n l jS F Y"); ?></h5>
     </footer>
 </body>
 </html>
