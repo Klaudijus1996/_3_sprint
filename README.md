@@ -26,7 +26,3 @@ CREATE DATABASE cms;
 		(5,'Services','This is Services page!');
 		INSERT INTO cms.users VALUES (1,'admin','password');
 ```
-You might need to execute a few lines in GIT bash (also might need to edit composer.json file to edit your directory).<br>
-Open GIT Bash in project directory and paste this line -> vendor/bin/doctrine orm:schema-tool:update --force --dump-sql<br>
-If succeslful execute the following -> php composer.phar dump-autoload<br>
-
